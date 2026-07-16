@@ -1,21 +1,21 @@
-const menu=document.querySelector('.menu-button');const nav=document.querySelector('.nav');
-menu.addEventListener('click',()=>{nav.classList.toggle('open');menu.setAttribute('aria-expanded',nav.classList.contains('open'))});
-document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.getElementById('line-reserve').addEventListener('click',e=>{e.preventDefault();alert('LINE公式アカウントの予約URL取得後に接続します。')});
+BASE CAMP YAMATO Version 1.5
+=============================
 
-const imageModal=document.querySelector('.image-modal');
-const modalImage=imageModal.querySelector('img');
-const closeModal=()=>{imageModal.classList.remove('open');imageModal.setAttribute('aria-hidden','true');modalImage.src='';};
-document.querySelectorAll('.zoomable').forEach(button=>{
-  button.addEventListener('click',()=>{
-    modalImage.src=button.dataset.image;
-    modalImage.alt=button.querySelector('img').alt;
-    imageModal.classList.add('open');
-    imageModal.setAttribute('aria-hidden','false');
-  });
-});
-imageModal.querySelector('.modal-close').addEventListener('click',closeModal);
-imageModal.addEventListener('click',event=>{if(event.target===imageModal)closeModal();});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeModal();});
+反映内容
+- ひとつ前に採用したトップ画像を継続使用
+- トップ画像下部の「充実の備品・設備」が切れて見える部分をカット
+- ヘッダーナビゲーションの2段折り返しを防止
+- 横幅が足りない画面では、早めにMENU表示へ切り替え
+- 不要な「料金表画像は追加していません」の文章を削除
+- オーナーの想いの見出しをPCでは1行・手書き風に変更
+- オーナー本文を手書き風の少し斜めの文字に変更
+- 最後の強調メッセージは従来の太字デザインを維持
+- トレーニング説明を各種小道具の常備が伝わる内容へ変更
+- 住所を宮前区土橋4丁目3-28へ変更
+- 鷺沼駅徒歩15分、渋谷から田園都市線で1本・23分へ変更
+
+GitHubへの更新
+1. ZIPを解凍
+2. index.html / style.css / script.js / assets をアップロード
+3. Commit changes
+4. 1〜3分後に公開ページを Ctrl+F5 で再読み込み
