@@ -9,6 +9,52 @@
   <meta property="og:image" content="assets/hero-main.webp">
   <title>BASE CAMP YAMATO</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Mobile layout patch: hero image fits the viewport and actionable buttons remain tappable. */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; }
+    .hero { width: 100%; height: auto; min-height: 0; margin: 0; padding: 0; overflow: hidden; }
+    .hero > img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: contain; object-position: center; }
+    .mobile-hero-buttons { display: none; }
+
+    @media (max-width: 768px) {
+      .site-header { width: 100%; box-sizing: border-box; }
+      .hero { height: auto !important; min-height: 0 !important; }
+      .hero > img {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        max-height: none !important;
+        margin: 0 !important;
+        transform: none !important;
+        object-fit: contain !important;
+        object-position: center !important;
+      }
+      .mobile-hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        padding: 16px 20px 24px;
+        box-sizing: border-box;
+      }
+      .mobile-hero-buttons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 54px;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      .mobile-hero-buttons .reserve-button { margin: 0; }
+      .mobile-hero-buttons .outline-button { margin: 0; }
+      .intro { margin-top: 0 !important; }
+      .section { max-width: 100%; box-sizing: border-box; }
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -33,6 +79,10 @@
 <main id="top">
   <section class="hero">
     <img src="assets/hero-main.webp" alt="BASE CAMP YAMATOの空間イメージ">
+    <div class="mobile-hero-buttons" aria-label="スマートフォン用の主要リンク">
+      <a class="reserve-button" href="#reserve">LINEで予約する</a>
+      <a class="outline-button" href="#price">料金を見る</a>
+    </div>
   </section>
 
   <section id="about" class="section intro reveal">
