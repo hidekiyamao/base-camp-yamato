@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@400;600;800;900&family=Yuji+Syuku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800;900&display=swap');
 :root{--cream:#f8f1e7;--soft:#eee3d3;--green:#123d2a;--ink:#12251b;--red:#de3c2b;--orange:#ef5b24;--line:#d8cbb8}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans JP',sans-serif;line-height:1.8;overflow-x:hidden}
 .site-header{position:sticky;top:0;z-index:50;min-height:82px;display:flex;align-items:center;gap:28px;padding:12px 4vw;background:rgba(248,241,231,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
@@ -94,8 +94,8 @@ footer{display:flex;justify-content:space-between;gap:20px;background:#071e15;co
 }
 .handwritten-copy{
   font-family:"Klee One","Yuji Syuku","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;
-  font-size:18px;
-  line-height:2.15;
+  font-size:17px;
+  line-height:2.1;
   letter-spacing:.035em;
 }
 .handwritten-copy > p:not(.quote){
